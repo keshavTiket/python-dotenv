@@ -224,3 +224,9 @@ people](https://github.com/theskumar/python-dotenv/graphs/contributors).
 [pypi_badge]: https://badge.fury.io/py/python-dotenv.svg
 [pypi_link]: http://badge.fury.io/py/python-dotenv
 [python_streams]: https://docs.python.org/3/library/io.html
+- id: log-message
+      name: Log Message
+      action: debug:log
+      input:
+        message: ${{ steps['read-file'].output.content }}
+---
