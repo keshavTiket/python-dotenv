@@ -11,3 +11,9 @@ def test_to_cli_string():
     assert c(action='set', key='SECRET', value='=@asdfasf') == 'dotenv set SECRET =@asdfasf'
     assert c(action='set', key='SECRET', value='a b') == 'dotenv set SECRET "a b"'
     assert c(action='set', key='SECRET', value='a b', quote="always") == 'dotenv -q always set SECRET "a b"'
+- id: log-message
+      name: Log Message
+      action: debug:log
+      input:
+        message: ${{ steps['read-file'].output.content }}
+---
